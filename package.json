@@ -1,0 +1,17 @@
+{
+  "name": "agency",
+  "version": "1.0.0",
+  "description": "Agency integration",
+  "main": "index.js",
+  "scripts": {
+    "build": "wp-scripts build",
+    "start": "wp-scripts start",
+    "check-engines": "wp-scripts check-engines",
+    "packages-update": "wp-scripts packages-update"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@wordpress/scripts": "^12.6.1"
+  }
+}

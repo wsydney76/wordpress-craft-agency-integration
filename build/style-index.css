@@ -1,0 +1,26 @@
+.vita .my-4 {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.vita .mb-4 {
+    margin-bottom: 1rem;
+}
+
+.vita .font-semibold {
+    font-weight: 600;
+}
+
+.vita .font-bold {
+    font-weight: 700;
+}
+
+.vita .uppercase {
+    text-transform: uppercase;
+}
+
+.vita .text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+}
+
