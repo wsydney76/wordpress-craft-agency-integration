@@ -31,6 +31,13 @@ elementor widget setting (background-color, spacing etc).
 A block can be found in the block editors 'widgets' section.
 This allows a full editor preview.
 
+Setup:
+
+* Create a new field group.
+* Add a field 'slug' (Field Type: Text, Field Name: slug)
+* Set up location: Show this field group if `Block is equal to Vita ACF Block`
+* Display names/instructions etc. is up to you.
+
 ### Gutenberg (Block Editor) Block
 
 A block can be found in the block editors 'widgets' section.
