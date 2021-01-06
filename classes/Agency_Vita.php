@@ -30,6 +30,7 @@ class Agency_Vita {
 			} else {
 				$body = wp_remote_retrieve_body( $response );
 				if ( AGENCY_ENABLE_CACHE ) {
+					$body .= '<!-- Vita Cached ' . date("Y-m-d H:i:s") . '-->';
 					set_transient( $transient_name, $body, 24 * 60 * 60 );
 				}
 			}
