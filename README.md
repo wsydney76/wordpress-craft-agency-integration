@@ -41,7 +41,7 @@ Setup:
 ### Gutenberg (Block Editor) Block
 
 A block can be found in the block editors 'widgets' section.
-This does not allow a full editor preview.
+This also allows a full editor preview.
 
 ### Shortcode
 

@@ -2,11 +2,14 @@ import {__} from '@wordpress/i18n';
 import {registerBlockType} from '@wordpress/blocks';
 import {PanelBody, TextControl} from '@wordpress/components';
 import {InspectorControls} from '@wordpress/block-editor';
+import ServerSideRender from '@wordpress/server-side-render';
+import {useBlockProps} from '@wordpress/block-editor';
 
 const blockStyle = {
     backgroundColor: '#e4e4e4',
     color: '#000',
     padding: '20px',
+    marginBottom: '12px'
 };
 
 registerBlockType('agency/vita-block', {
@@ -15,23 +18,14 @@ registerBlockType('agency/vita-block', {
     icon: 'universal-access-alt',
     category: 'widgets',
 
-    attributes: {
-        slug: {
-            type: 'string',
-            default: ''
-        },
-        heading: {
-            type: 'string',
-            default: ''
-        },
-    },
 
     edit: (props) => {
 
         const {attributes, setAttributes} = props;
+        const blockProps = useBlockProps();
 
         return (
-            <div>
+            <div {...blockProps}>
                 <InspectorControls>
                     <PanelBody title={__('Vita')}>
                         <label>Profil-Slug in der Agentur-DB:</label>
@@ -47,9 +41,16 @@ registerBlockType('agency/vita-block', {
                     </PanelBody>
                 </InspectorControls>
 
+                {!attributes.slug && (
                 <div style={blockStyle}>
-                    <div>Importierte Vita wird hier angezeigt. Slug: {attributes.slug}</div>
+                    <div>Slug eingeben.</div>
                 </div>
+                )}
+
+                <ServerSideRender
+                    block="agency/vita-block"
+                    attributes={props.attributes}
+                />
             </div>
         );
     },

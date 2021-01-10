@@ -63,19 +63,29 @@ function agency_gutenberg_blocks() {
 	wp_register_style(
 		'gutenberg-vita-styles',
 		plugins_url( 'build/style-index.css', __FILE__ ),
-		array( )
+		[]
 	);
 
 	wp_register_style(
 		'gutenberg-vita-editor-styles',
 		plugins_url( 'build/style-index.css', __FILE__ ),
-		array( 'wp-edit-blocks' )
+		[ 'wp-edit-blocks' ]
 	);
 
 	register_block_type( 'agency/vita-block', [
 		'apiVersion'      => 2,
-		'style' => 'gutenberg-vita-styles',
-		'editor_style' => 'gutenberg-vita-editor-styles',
+		'attributes'      => [
+			'slug'    => [
+				'type'    => 'string',
+				'default' => ''
+			],
+			'heading' => [
+				'type'    => 'string',
+				'default' => ''
+			]
+		],
+		'style'           => 'gutenberg-vita-styles',
+		'editor_style'    => 'gutenberg-vita-editor-styles',
 		'editor_script'   => 'gutenberg-vita-block',
 		'render_callback' => 'agency_render_vita'
 	] );
