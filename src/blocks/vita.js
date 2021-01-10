@@ -1,4 +1,3 @@
-import {__} from '@wordpress/i18n';
 import {registerBlockType} from '@wordpress/blocks';
 import {PanelBody, TextControl} from '@wordpress/components';
 import {InspectorControls} from '@wordpress/block-editor';
@@ -27,7 +26,7 @@ registerBlockType('agency/vita-block', {
         return (
             <div {...blockProps}>
                 <InspectorControls>
-                    <PanelBody title={__('Vita')}>
+                    <PanelBody title="Vita">
                         <label>Profil-Slug in der Agentur-DB:</label>
                         <TextControl
                             value={attributes.slug}
@@ -49,7 +48,7 @@ registerBlockType('agency/vita-block', {
 
                 <ServerSideRender
                     block="agency/vita-block"
-                    attributes={props.attributes}
+                    attributes={attributes}
                 />
             </div>
         );
