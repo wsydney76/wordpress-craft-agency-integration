@@ -2,6 +2,11 @@
 
 class Agency_Vita {
 	public function get_vita( $slug, $heading = '' ) {
+
+		if ( ! $slug ) {
+			return ' ';
+		}
+
 		$base_url = AGENCY_API_BASE_URL .'/partial/vita/';
 
 		$transient_name = 'agency-vita-' . $slug;

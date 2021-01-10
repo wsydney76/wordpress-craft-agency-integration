@@ -1,8 +1,8 @@
 import {registerBlockType} from '@wordpress/blocks';
 import {PanelBody, TextControl} from '@wordpress/components';
-import {InspectorControls} from '@wordpress/block-editor';
+import {InspectorControls, useBlockProps} from '@wordpress/block-editor';
 import ServerSideRender from '@wordpress/server-side-render';
-import {useBlockProps} from '@wordpress/block-editor';
+
 
 const blockStyle = {
     backgroundColor: '#e4e4e4',
